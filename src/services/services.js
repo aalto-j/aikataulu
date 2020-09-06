@@ -1,13 +1,13 @@
 import axios from 'axios'
-import ApolloClient from 'apollo-boost';
-import { gql } from "apollo-boost";
+//import ApolloClient from 'apollo-boost';
+//import { gql } from "apollo-boost";
 
 const api_key = 'f98499062b372a377c81b92ccccc5797'
 const capital = 'Helsinki'
 const weatherUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${ capital }&units=metric&appid=${ api_key }`)
 const eventsUrl = ('https://open-api.myhelsinki.fi/v1/events/')
 const ablocUrl = ('https://foodandco.fi/modules/json/json/Index?costNumber=3087&language=fi')
-
+/*
 const client = new ApolloClient({
     uri: `https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql`
 });
@@ -41,7 +41,7 @@ const getTimetable = () => (
         })
     )
 
-
+*/
 const getWeather = () => (
     axios
         .get(weatherUrl)
@@ -69,4 +69,4 @@ const getEvents = () => (
 
 
 
-export default { getWeather, getEvents, getTimetable, getAbloc}
+export default { getWeather, getEvents, getAbloc} //getTimetable
