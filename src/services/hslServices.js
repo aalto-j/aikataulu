@@ -12,7 +12,12 @@ const getTimetable = () => fetch({
         realtime
         realtimeArrival
         headsign
-        trip {route{shortName}}
+        trip {
+          gtfsId
+          route{
+            shortName
+            mode
+        }}
       }
     }
   }
