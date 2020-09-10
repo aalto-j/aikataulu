@@ -60,12 +60,17 @@ const App = () => {
             .then(res => {
                 setAbloc(res)
             })*/
+            
+        //setTimetable(null)
         timetableService
             .getTimetable()
             .then(res => {
-                setTimetable(res)
-            })
+        setTimetable(res)
+    })
         }, [])
+
+        //setInterval(geet, 3000)
+
 
     setInterval(() => setTime(new Date()), 1000)
 /*

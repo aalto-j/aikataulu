@@ -7,7 +7,7 @@ const Timetable = ({ timetable }) => {
         const timetableArray = timetable.stops.flat().map(a => a.stoptimesWithoutPatterns).flat().sort(function(a, b) {return a.realtimeArrival-b.realtimeArrival})
 
         function editArrival(realtimeArrival) {
-/*
+
             function with_zero(t) {           //function to edit time 9:3 => 9:03
                 return (t < 10 ? '0' : '') + t;
               }
@@ -17,20 +17,20 @@ const Timetable = ({ timetable }) => {
             today_abs.setMinutes(0);
             today_abs.setSeconds(0);
             today_secs = (today.getTime() - today_abs.getTime()) / 1000;
-            if (realtimeArrival > today_secs) {
+            if (realtimeArrival < today_secs) {
                 var minutesUntilArrival = new Date(( realtimeArrival + 86400 - today_secs )).getMinutes()
                 return minutesUntilArrival.toString()
             }
-            else if (( realtimeArrival - today_secs ) > 600) {
-                var minutesUntilArrival = new Date(( realtimeArrival - today_secs )).getMinutes()
-                return minutesUntilArrival.toString()
+            else if (( realtimeArrival - today_secs ) < 600) {
+                //var minutesUntilArrival = new Date(( realtimeArrival - today_secs )).getMinutes()
+                return Math.floor((realtimeArrival - today_secs) / 60) //minutesUntilArrival.toString()
             } else {
                 var todayOther = new Date(Date.now())
                 todayOther.setHours(0); todayOther.setMinutes(0); todayOther.setMilliseconds(0); todayOther.setSeconds(0)
                 var arriveTime = new Date(realtimeArrival*1000 + todayOther.valueOf())
                 return(arriveTime.getHours().toString() + ':' + with_zero(arriveTime.getMinutes()))
-            }*/
-            return realtimeArrival
+            }
+            //return realtimeArrival
             }
 
             /*
