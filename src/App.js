@@ -81,6 +81,7 @@ const App = () => {
                     <Timetable timetable={timetable} />
                     
                 </div>
+                <footer>Timetables: Helsinki Region Transport 2019 </footer>
                 </div>
             </>
             )

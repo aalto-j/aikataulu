@@ -8,7 +8,7 @@ const fetch = createApolloFetch({
 const getTimetable = () => fetch({
   query: `{
     stops(name: "Töölöntori") {
-      stoptimesWithoutPatterns (numberOfDepartures: 4) {
+      stoptimesWithoutPatterns (numberOfDepartures: 3) {
         realtime
         realtimeArrival
         headsign

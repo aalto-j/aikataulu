@@ -18,12 +18,12 @@ p {
     margin-right: 50px;
     border: dotted;
     border-width: 5px;
-    border-color: rgba(255, 255, 255, .4);
+    border-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
     padding: 30px;
     width: 340px;
     font-size: 60px;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(0, 0, 0, .5);
     text-align: center;
 }
 
@@ -32,22 +32,28 @@ p {
 }
 
 .timetable {
+    table-layout: fixed;
     position: absolute;
-    margin-top: 100px;
+    margin-top: 400px;
     margin-left: 100px;
     margin-right: 50px;
     border: dotted;
     border-width: 5px;
-    border-color: rgba(255, 255, 255, .4);
+    border-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
-    padding: 30px;
-    width: 340px;
+    padding: 20px;
+    width: 410px;
     font-size: 15px;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(0, 0, 0);
 }
 
 .headsign {
-    width: 170px;
+    font-size: 15px;
+}
+
+.shortName {
+    padding-left: 40px;
+    font-size: 30px;
 }
 
 .wea {
@@ -56,12 +62,12 @@ p {
     margin-left: 50px;
     border: dotted;
     border-width: 5px;
-    border-color: rgba(255, 255, 255, .4);
+    border-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
     padding: 30px;
     width: 340px;
     font-size: 30px;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(0, 0, 0, .5);
     text-align: center;
     float: right;
 }
