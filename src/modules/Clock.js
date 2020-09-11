@@ -13,8 +13,7 @@ const Clock = ({ time }) => {
                 <p className="year">{time.getYear() + 1900}</p>
             </div><div className="clock">
                 <p className="hour">{with_zero(time.getHours())}.</p>
-                <p className="min">{with_zero(time.getMinutes())}.</p>
-                <p className="sec">{with_zero(time.getSeconds())}</p>
+                <p className="min">{with_zero(time.getMinutes())}</p>
             </div>
         </div>
         )

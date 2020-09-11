@@ -11,23 +11,26 @@ const Timetable = ({ timetable }) => {
             function with_zero(t) {           //function to edit time 9:3 => 9:03
                 return (t < 10 ? '0' : '') + t;
               }
-
+            
             let today = new Date(), today_abs = new Date(), today_secs = 0; // From https://stackoverflow.com/questions/11447067/in-javascript-how-to-get-second-of-current-day
             today_abs.setHours(0);
             today_abs.setMinutes(0);
             today_abs.setSeconds(0);
             today_secs = (today.getTime() - today_abs.getTime()) / 1000;
-            if (realtimeArrival < today_secs) {
-                var minutesUntilArrival = new Date(( realtimeArrival + 86400 - today_secs )).getMinutes()
-                return minutesUntilArrival.toString()
+            
+            console.log(realtimeArrival, today_secs)
+
+            if (realtimeArrival < today_secs && ( 86400 - today_secs + realtimeArrival ) < 600) {
+                return( Math.floor(86400 - today_secs + realtimeArrival) / 60 )
+                /*var minutesUntilArrival = new Date(( realtimeArrival + 86400 - today_secs )).getMinutes()
+                return minutesUntilArrival.toString()*/
             }
             else if (( realtimeArrival - today_secs ) < 600) {
-                //var minutesUntilArrival = new Date(( realtimeArrival - today_secs )).getMinutes()
-                return Math.floor((realtimeArrival - today_secs) / 60) //minutesUntilArrival.toString()
+                return (Math.max(Math.floor((realtimeArrival - today_secs) / 60), 0))
             } else {
                 var todayOther = new Date(Date.now())
                 todayOther.setHours(0); todayOther.setMinutes(0); todayOther.setMilliseconds(0); todayOther.setSeconds(0)
-                var arriveTime = new Date(realtimeArrival*1000 + todayOther.valueOf())
+                var arriveTime = new Date(realtimeArrival * 1000 + todayOther.valueOf())
                 return(arriveTime.getHours().toString() + ':' + with_zero(arriveTime.getMinutes()))
             }
             //return realtimeArrival

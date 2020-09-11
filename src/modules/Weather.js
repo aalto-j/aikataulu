@@ -12,7 +12,7 @@ const Weather = ({ weather }) => {
         return (
             <>
                 <div className="wea">
-                    <div>Weather today</div>
+                    <div>Sää tänään</div>
                     <div>
                         <p className="temperature">{temp()} C</p>
                         <img className="icon" src={(`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`)} />

@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const api_key = 'f98499062b372a377c81b92ccccc5797'
 const capital = 'Helsinki'
-const weatherUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${ capital }&units=metric&appid=${ api_key }`)
+const weatherUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${ capital }&units=metric&appid=${ api_key }&lang=fi`)
 const eventsUrl = ('https://open-api.myhelsinki.fi/v1/events/')
 const ablocUrl = ('https://foodandco.fi/modules/json/json/Index?costNumber=3087&language=fi')
 /*

@@ -4,11 +4,13 @@ p {
 }
 
 .container {
-    background-image: url("./img/20200617_212946.jpg");
+    background-image: url("./img/BlueWallpaper.jpg");
     height: 1920px;
     font-family: 'Cinzel', serif;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    border-color: aliceblue;
+    color: aliceblue;
 }
 
 .time {
@@ -18,12 +20,10 @@ p {
     margin-right: 50px;
     border: dotted;
     border-width: 5px;
-    border-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
     padding: 30px;
     width: 340px;
     font-size: 60px;
-    color: rgba(0, 0, 0, .5);
     text-align: center;
 }
 
@@ -39,12 +39,10 @@ p {
     margin-right: 50px;
     border: dotted;
     border-width: 5px;
-    border-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
     padding: 20px;
     width: 410px;
     font-size: 15px;
-    color: rgba(0, 0, 0);
 }
 
 .headsign {
@@ -62,12 +60,10 @@ p {
     margin-left: 50px;
     border: dotted;
     border-width: 5px;
-    border-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
     padding: 30px;
     width: 340px;
     font-size: 30px;
-    color: rgba(0, 0, 0, .5);
     text-align: center;
     float: right;
 }

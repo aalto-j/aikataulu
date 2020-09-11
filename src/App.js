@@ -44,6 +44,7 @@ const App = () => {
     const [time, setTime] = useState(new Date())
     const [timetable, setTimetable] = useState(null)
 
+    
     useEffect(() => {
         apiService
             .getWeather()
@@ -62,17 +63,20 @@ const App = () => {
             })*/
             
         //setTimetable(null)
-        timetableService
+        setInterval(() => {
+            setTime(new Date())
+            timetableService
             .getTimetable()
             .then(res => {
         setTimetable(res)
-    })
+        
+    })}, 5000)
         }, [])
 
         //setInterval(geet, 3000)
 
 
-    setInterval(() => setTime(new Date()), 1000)
+    //var timer2 = setInterval(() => setTime(new Date()), 1000) //clock
 /*
 
                     <Abloc abloc={abloc} />
