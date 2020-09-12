@@ -90,7 +90,7 @@ const App = () => {
                     <Timetable timetable={timetable} />
                     
                 </div>
-                <footer>Timetables: Helsinki Region Transport 2019 </footer>
+                <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
                 </div>
             </>
             )
