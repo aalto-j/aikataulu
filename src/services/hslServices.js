@@ -7,8 +7,8 @@ const fetch = createApolloFetch({
 
 const getTimetable = () => fetch({
   query: `{
-    stops(name: "Töölöntori") {
-      stoptimesWithoutPatterns (numberOfDepartures: 4) {
+    stops(name: "Apollonkatu") {
+      stoptimesWithoutPatterns (numberOfDepartures: 9) {
         realtime
         realtimeArrival
         headsign
@@ -48,4 +48,4 @@ const getTimetable = () => fetch({
     })*/
 })
 
-export default { getTimetable }
+export default {getTimetable}

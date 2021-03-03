@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import apiService from './services/services.js'
 import timetableService from './services/hslServices.js'
+import bikeService from './services/bikeServices.js'
 //import { ApolloProvider } from "react-apollo";
 //import { ApolloProvider } from '@apollo/react-hooks'
 //import { DepartureView } from './DepartureView'
 import Clock from'./modules/Clock.js'
 import Weather from './modules/Weather.js'
 import Timetable from './modules/Timetable.js'
+import Bikes from './modules/Bikes.js'
 /*
 const Event = ({ events }) => {
     if (events === null) {
@@ -43,19 +45,19 @@ const App = () => {
     const [events, setEvents] = useState(null)
     const [time, setTime] = useState(new Date())
     const [timetable, setTimetable] = useState(null)
-
+    const [bikes, setBikes] = useState(null)
     
     useEffect(() => {
         apiService
             .getWeather()
             .then(res => {
                 setWeather(res)
-            })
+        })
         apiService
             .getEvents()
             .then(res => {
                 setEvents(res)
-            })
+        })
         /*apiService
             .getAbloc()
             .then(res => {
@@ -69,8 +71,13 @@ const App = () => {
             .getTimetable()
             .then(res => {
         setTimetable(res)
-        
-    })}, 5000)
+        })
+        bikeService
+            .getBikes()
+            .then(res => {
+                setBikes(res)
+            })
+}, 5000)
         }, [])
 
         //setInterval(geet, 3000)
@@ -88,7 +95,7 @@ const App = () => {
                     <Clock time={time} />
                     <Weather weather={weather} />
                     <Timetable timetable={timetable} />
-                    
+                    <Bikes bikes={bikes} />
                 </div>
                 <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
                 </div>

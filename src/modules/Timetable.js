@@ -47,14 +47,24 @@ const Timetable = ({ timetable }) => {
 
         return (
         <table className="timetable">
-            {timetableArray.map((lahto) =>
-            <tr classname="departureRow" key={lahto.trip.gtfsId}>
-                <td className="realtimeArrival">{editArrival(lahto.realtimeArrival)}</td>
-                <td className="headsign">{lahto.headsign}</td>
-                <td className="shortName">{lahto.trip.route.shortName}</td>
-                <td className="mode">{lahto.trip.route.mode}</td>
-            </tr>
-            )}
+            {timetableArray.filter(lahto => !(editArrival(lahto.realtimeArrival) < 2)).slice(0, 16).map((lahto) => 
+            lahto.realtime ? (
+                <tr classname="departureRow" key={lahto.trip.gtfsId}>
+                    <td className="shortName">{lahto.trip.route.shortName}</td>
+                    <td className="headsign">{lahto.headsign}</td>
+                    <td className="realtimeArrival"  style={{color: 'green'}} >{editArrival(lahto.realtimeArrival)}</td>
+                </tr>
+                )
+            :
+                (
+                <tr classname="departureRow" key={lahto.trip.gtfsId}>
+                    <td className="shortName">{lahto.trip.route.shortName}</td>
+                    <td className="headsign">{lahto.headsign}</td>
+                    <td className="realtimeArrival">~{editArrival(lahto.realtimeArrival)}</td>
+                </tr>
+                )
+            )
+        }
         </table>
         
             //<div>{timetable.stops[0].stoptimesWithoutPatterns[0].headsign}</div>
