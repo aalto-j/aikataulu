@@ -47,7 +47,7 @@ const Timetable = ({ timetable }) => {
 
         return (
         <table className="timetable">
-            {timetableArray.filter(lahto => !(editArrival(lahto.realtimeArrival) < 2)).slice(0, 16).map((lahto) => 
+            {timetableArray.filter(lahto => !(editArrival(lahto.realtimeArrival) < 2)).slice(0, 20).map((lahto) => 
             lahto.realtime ? (
                 <tr classname="departureRow" key={lahto.trip.gtfsId}>
                     <td className="shortName">{lahto.trip.route.shortName}</td>

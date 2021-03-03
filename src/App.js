@@ -55,11 +55,11 @@ const App = () => {
             .then(res => {
                 setWeather(res)
         })
-        apiService
-            .getEvents()
-            .then(res => {
-                setEvents(res)
-        })
+        //apiService
+        //    .getEvents()
+        //    .then(res => {
+        //        setEvents(res)
+        //})
         /*apiService
             .getAbloc()
             .then(res => {
@@ -93,13 +93,14 @@ const App = () => {
         case 'timetable':
             return (
                 <>
-                    <ViewButtons setView={setView}/>
+                    
                     <div className="container">
-                        <div>
+                    <ViewButtons setView={setView}/>
+                        <div className="time-weather">
                             <Clock time={time} />
                             <Weather weather={weather} />
-                            <Timetable timetable={timetable} />
                         </div>
+                        <Timetable timetable={timetable} />
                         <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
                     </div>
                 </>
@@ -107,13 +108,13 @@ const App = () => {
         case 'bike':
             return (
                 <>
-                    <ViewButtons setView={setView}/>
                     <div className="container">
-                        <div>
+                    <ViewButtons setView={setView}/>
+                        <div className="time-weather">
                             <Clock time={time} />
                             <Weather weather={weather} />
-                            <Bikes bikes={bikes} />
                         </div>
+                        <Bikes bikes={bikes} />
                         <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
                     </div>
                 </>
@@ -121,9 +122,9 @@ const App = () => {
         case 'list':
             return (
                 <>
-                    <ViewButtons setView={setView}/>
                     <div className="container">
-                        <div>
+                    <ViewButtons setView={setView}/>
+                        <div className="time-weather">
                             <Clock time={time} />
                             <Weather weather={weather} />
                         </div>

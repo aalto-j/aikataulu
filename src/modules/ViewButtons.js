@@ -3,9 +3,9 @@ import React from 'react'
 const ViewButtons = ({setView}) => {
     return (
     <>
-        <button onClick={() => setView('timetable')}>Aikataulu</button>
-        <button onClick={() => setView('bike')}>Pyörät</button>
-        <button onClick={() => setView('list')}>Muistilista</button>
+        <button className="timetablebutton" onClick={() => setView('timetable')}></button>
+        <button className="bikebutton" onClick={() => setView('bike')}></button>
+        <button className="listbutton" onClick={() => setView('list')}></button>
     </>
     )
 }
