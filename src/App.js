@@ -11,6 +11,7 @@ import Clock from'./modules/Clock.js'
 import Weather from './modules/Weather.js'
 import Timetable from './modules/Timetable.js'
 import Bikes from './modules/Bikes.js'
+import ViewButtons from './modules/ViewButtons.js'
 /*
 const Event = ({ events }) => {
     if (events === null) {
@@ -46,6 +47,7 @@ const App = () => {
     const [time, setTime] = useState(new Date())
     const [timetable, setTimetable] = useState(null)
     const [bikes, setBikes] = useState(null)
+    const [view, setView] = useState('timetable')
     
     useEffect(() => {
         apiService
@@ -80,27 +82,57 @@ const App = () => {
 }, 5000)
         }, [])
 
-        //setInterval(geet, 3000)
 
-
-    //var timer2 = setInterval(() => setTime(new Date()), 1000) //clock
+        
 /*
-
-                    <Abloc abloc={abloc} />
- <Event events={events} />*/
-    return (
-        <>
-            <div className="container">
-                <div>
-                    <Clock time={time} />
-                    <Weather weather={weather} />
-                    <Timetable timetable={timetable} />
-                    <Bikes bikes={bikes} />
-                </div>
-                <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
-                </div>
-            </>
+    <Abloc abloc={abloc} />
+    <Event events={events} />
+*/
+    
+    switch(view) {
+        case 'timetable':
+            return (
+                <>
+                    <ViewButtons setView={setView}/>
+                    <div className="container">
+                        <div>
+                            <Clock time={time} />
+                            <Weather weather={weather} />
+                            <Timetable timetable={timetable} />
+                        </div>
+                        <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
+                    </div>
+                </>
             )
+        case 'bike':
+            return (
+                <>
+                    <ViewButtons setView={setView}/>
+                    <div className="container">
+                        <div>
+                            <Clock time={time} />
+                            <Weather weather={weather} />
+                            <Bikes bikes={bikes} />
+                        </div>
+                        <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
+                    </div>
+                </>
+            )
+        case 'list':
+            return (
+                <>
+                    <ViewButtons setView={setView}/>
+                    <div className="container">
+                        <div>
+                            <Clock time={time} />
+                            <Weather weather={weather} />
+                        </div>
+                        <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
+                    </div>
+                </>
+            )
+        }
+    
 }
 
 
