@@ -5,9 +5,7 @@ const Bikes = ({ bikes }) => {
         return (null)
     } else {
         return (
-<div>{bikes.bikeRentalStation.bikesAvailable}</div>
-
-
+            <div className="">{bikes.bikeRentalStation.bikesAvailable} {bikes.bikeRentalStation.name}</div>
         )
     }
 }

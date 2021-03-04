@@ -8,14 +8,15 @@ import {
     Link
     } from "react-router-dom";
 import App from './App.js';
+import Setup from './Setup.js'
 import './index.css'
 
 ReactDOM.render(
     <React.StrictMode>
         <Router>
-            <Route path="/"><App/></Route>
-            <Router path="/setup"/><Router/>
-            <Router path="/lista"/><Router/>
+                <Route exact path="/"><App/></Route>
+                <Route path="/setup"><Setup/></Route>
+                <Route path="/lista">Juu</Route>
         </Router>
     </React.StrictMode>,
     document.getElementById('root')

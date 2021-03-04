@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 
-const Setup = () => {
 
-    const [bikeStation, setBikeStation] = useState('036')
-    const [stopName, setStopName] = useState('Apollonkatu')
+const Setup = () => {
 
     return (
         <>
@@ -12,3 +10,5 @@ const Setup = () => {
         </>
     )
 }
+
+export default Setup

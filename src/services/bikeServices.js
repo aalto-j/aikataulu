@@ -1,3 +1,5 @@
+import bikeStation from '../Setup.js'
+
 const { createApolloFetch } = require('apollo-fetch');
 
 const fetch = createApolloFetch({
@@ -6,7 +8,7 @@ const fetch = createApolloFetch({
 
 const getBikes = () => fetch({
   query: `{
-    bikeRentalStation(id:"036") {
+    bikeRentalStation(id:${bikeStation}) {
         stationId
         name
         bikesAvailable

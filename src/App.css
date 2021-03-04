@@ -29,16 +29,20 @@ button {
     margin-left: 10%;
     background-image: url('./img/aikataulu.png');
     background-size: 196px;
+    background-repeat: no-repeat;
 }
 
 .bikebutton {
     background-image: url('./img/pyora.png');
     background-size: 196px;
+    background-repeat: no-repeat;
 }
 
 .listbutton {
     background-image: url('./img/lista.png');
     background-size: 196px; 
+    background-repeat: no-repeat;
+
 }
 
 .time {
