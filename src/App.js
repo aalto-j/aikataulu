@@ -3,6 +3,9 @@ import './App.css';
 import apiService from './services/services.js'
 import timetableService from './services/hslServices.js'
 import bikeService from './services/bikeServices.js'
+
+
+
 //import { ApolloProvider } from "react-apollo";
 //import { ApolloProvider } from '@apollo/react-hooks'
 //import { DepartureView } from './DepartureView'
