@@ -2,7 +2,9 @@ import axios from 'axios'
 //import ApolloClient from 'apollo-boost';
 //import { gql } from "apollo-boost";
 
-const api_key = 'f98499062b372a377c81b92ccccc5797'
+
+const api_key = //Api key
+console.log(api_key)
 const capital = 'Helsinki'
 const weatherUrl = (`https://api.openweathermap.org/data/2.5/weather?q=${ capital }&units=metric&appid=${ api_key }&lang=fi`)
 const eventsUrl = ('https://open-api.myhelsinki.fi/v1/events/')
@@ -45,6 +47,7 @@ const getTimetable = () => (
 const getWeather = () => (
     axios
         .get(weatherUrl)
+        .console.log(weatherUrl)
         .then(response => {
             return (response.data)
         })
