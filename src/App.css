@@ -82,6 +82,16 @@ button {
     font-size: 30px;
 }
 
+.bikes {
+    position: absolute;
+    margin-left: 10%;
+    border-width: 5px;
+    border-radius: 20px;
+    padding: 10px;
+    width: 80%;
+    font-size: 15px;
+    background: rgb(255, 255, 255, .5);
+}
 
 .wea {
     margin-top: 10%;

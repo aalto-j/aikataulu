@@ -1,14 +1,14 @@
-import bikeStation from '../Setup.js'
-
 const { createApolloFetch } = require('apollo-fetch');
 
 const fetch = createApolloFetch({
   uri: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
 })
 
+/**/
+
 const getBikes = () => fetch({
   query: `{
-    bikeRentalStation(id:${bikeStation}) {
+    bikeRentalStation(id:"036") {
         stationId
         name
         bikesAvailable
@@ -16,6 +16,7 @@ const getBikes = () => fetch({
     }   
 }`
 }).then(res => {
+    console.log(res.data)
     return res.data
 })
 

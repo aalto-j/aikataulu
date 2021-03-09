@@ -4,8 +4,9 @@ const Bikes = ({ bikes }) => {
     if (bikes === null) {
         return (null)
     } else {
+        console.log(bikes)
         return (
-            <div className="">{bikes.bikeRentalStation.bikesAvailable} {bikes.bikeRentalStation.name}</div>
+            <div className="bikes" >{bikes.bikeRentalStation.bikesAvailable} {bikes.bikeRentalStation.name}</div>
         )
     }
 }

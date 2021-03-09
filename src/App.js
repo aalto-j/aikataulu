@@ -24,7 +24,8 @@ const App = () => {
     const [timetable, setTimetable] = useState(null)
     const [bikes, setBikes] = useState(null)
     const [view, setView] = useState('timetable')
-    
+    //const bikeStation = "036"
+
     useEffect(() => {
         apiService
             .getWeather()
@@ -39,11 +40,11 @@ const App = () => {
             .then(res => {
         setTimetable(res)
         })
-        bikeService
+            bikeService
             .getBikes()
             .then(res => {
-                setBikes(res)
-            })
+        setBikes(res)
+        })
 }, 5000)
         }, [])
 
