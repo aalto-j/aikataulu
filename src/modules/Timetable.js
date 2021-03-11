@@ -46,27 +46,26 @@ const Timetable = ({ timetable }) => {
         
 
         return (
-        <table className="timetable">
-            {timetableArray.filter(lahto => !(editArrival(lahto.realtimeArrival) < 2)).slice(0, 20).map((lahto) => 
-            lahto.realtime ? (
-                <tr classname="departureRow" key={lahto.trip.gtfsId}>
-                    <td className="shortName">{lahto.trip.route.shortName}</td>
-                    <td className="headsign">{lahto.headsign}</td>
-                    <td className="realtimeArrival"  style={{color: 'green'}} >{editArrival(lahto.realtimeArrival)}</td>
-                </tr>
+            <table className="timetable">
+                {timetableArray.filter(lahto => !(editArrival(lahto.realtimeArrival) < 2)).slice(0, 20).map((lahto) => 
+                lahto.realtime ? (
+                    <tr classname="departureRow" key={lahto.trip.gtfsId}>
+                        <td className="shortName">{lahto.trip.route.shortName}</td>
+                        <td className="headsign">{lahto.headsign}</td>
+                        <td className="realtimeArrival"  style={{color: 'green'}} >{editArrival(lahto.realtimeArrival)}</td>
+                    </tr>
+                    )
+                :
+                    (
+                    <tr classname="departureRow" key={lahto.trip.gtfsId}>
+                        <td className="shortName">{lahto.trip.route.shortName}</td>
+                        <td className="headsign">{lahto.headsign}</td>
+                        <td className="realtimeArrival">~{editArrival(lahto.realtimeArrival)}</td>
+                    </tr>
+                    )
                 )
-            :
-                (
-                <tr classname="departureRow" key={lahto.trip.gtfsId}>
-                    <td className="shortName">{lahto.trip.route.shortName}</td>
-                    <td className="headsign">{lahto.headsign}</td>
-                    <td className="realtimeArrival">~{editArrival(lahto.realtimeArrival)}</td>
-                </tr>
-                )
-            )
-        }
-        </table>
-        
+            }
+            </table>
             //<div>{timetable.stops[0].stoptimesWithoutPatterns[0].headsign}</div>
         )
     }

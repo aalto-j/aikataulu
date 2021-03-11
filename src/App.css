@@ -4,52 +4,62 @@ p {
 }
 
 .container {
+    position: absolute;
     background-image: url("./img/20200622_225004.jpg");
-    height: 1920px;
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
     font-family: 'Roboto', sans-serif;
     background-attachment: fixed;
     background-repeat: no-repeat;
     border-color: aliceblue;
     color: black;
+    
+}
+
+.buttons {
+    position: relative;
+    width: 80%;
+    margin: 8%;
 }
 
 button {
- height: 10%;
- width: 20%;
- border-radius: 20px;
- margin-top: 10%;
- margin-left: 5%;
- margin-right: 5%;
+ width: 15%;
  background-color: rgb(255, 255, 255, 0);
+ background-size: 100%;
  border: none;
- 
+ padding: 0px;
+}
+
+button::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
 }
 
 .timetablebutton {
-    margin-left: 10%;
     background-image: url('./img/aikataulu.png');
-    background-size: 196px;
     background-repeat: no-repeat;
+    margin-right: 10%;
 }
 
 .bikebutton {
     background-image: url('./img/pyora.png');
-    background-size: 196px;
     background-repeat: no-repeat;
+    margin-right: 10%;
 }
 
 .listbutton {
     background-image: url('./img/lista.png');
-    background-size: 196px; 
     background-repeat: no-repeat;
 
 }
 
 .time {
-    margin-top: 10%;
     position: absolute;
+    padding: 5%;
     width: 40%;
-    font-size: 60px;
+    font-size: 3.5vh;
     text-align: center;
 }
 
@@ -57,29 +67,32 @@ button {
 
 .timetable {
     position: absolute;
-    margin-left: 10%;
-    border-width: 5px;
+    margin-left: 8%;
     border-radius: 20px;
-    padding: 10px;
-    width: 80%;
-    font-size: 15px;
+    width: 84%;
     background: rgb(255, 255, 255, .5);
 }
 
+tr {
+    font-size: 1.6vh;
+}
+
+tr:nth-child(even) {
+    background: rgb(255, 255, 255, .3);
+}
+
 .realtimeArrival {
-    font-size: 20px;
     text-align: center;
 }
 
 .headsign {
     table-layout: fixed;
-    font-size: 20px;
-    width: 200px;
+    width: 50%;
 }
 
 .shortName {
-    padding-left: 20px;
-    font-size: 30px;
+    width: 20%;
+    text-align: center;
 }
 
 .bikes {
@@ -94,42 +107,45 @@ button {
 }
 
 .wea {
-    margin-top: 10%;
-    width: 35%;
-    font-size: 30px;
+    position: absolute;
+    width: 40%;
+    margin-left: 50%;
+    padding: 5%;
+    font-size: 2vh;
     text-align: center;
-    float: right;
     
 
 }
 
 .temperature {
-    font-size: 60px;
-    height: 100px;
-    width: 100px;
+    position: absolute;
+    margin-top: 0%;
+    margin-left: 5%;
+    font-size: 3.3vh;
     text-align: center;
-    margin-top: -20px;
 }
 
 .time-weather {
-    margin: 10%;
-    height: 20%;
+    position: relative;
+    margin: 8%;
+    height: 15%;
     border-radius: 20px;
     border-width: 5px;
-    padding: 10px;
     background: rgb(255, 255, 255, .5);
 
 }
 
 .icon {
-    margin-bottom: -30px;
+    margin-top: -7%;
 }
 
 .windicon {
-    margin-bottom: -30px;
-    margin-right: 15px;
     max-width: 20%;
-    height: auto;
+}
+
+.windspeed {
+    position: absolute;
+    padding-top: 12%;
 }
 
 footer {
