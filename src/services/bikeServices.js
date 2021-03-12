@@ -8,7 +8,7 @@ const fetch = createApolloFetch({
 
 const getBikes = () => fetch({
   query: `{
-    bikeRentalStation(id:"036") {
+    bikeRentalStations(ids:["036", "070", "035", "037"]) {
         stationId
         name
         bikesAvailable

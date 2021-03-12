@@ -13,6 +13,7 @@ import Clock from'./modules/Clock.js'
 import Weather from './modules/Weather.js'
 import Timetable from './modules/Timetable.js'
 import Bikes from './modules/Bikes.js'
+import List from './modules/List.js'
 import ViewButtons from './modules/ViewButtons.js'
 
 const App = () => {
@@ -94,6 +95,7 @@ const App = () => {
                             <Clock time={time} />
                             <Weather weather={weather} />
                         </div>
+                        <List />
                         <footer>Timetables - Helsinki Region Transport 2019 | Weather - Open Weather Map | Icons8</footer>
                     </div>
                 </>

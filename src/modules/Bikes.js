@@ -5,8 +5,12 @@ const Bikes = ({ bikes }) => {
         return (null)
     } else {
         console.log(bikes)
+        //{bikes.bikeRentalStation.bikesAvailable} {bikes.bikeRentalStation.name}
         return (
-            <div className="bikes" >{bikes.bikeRentalStation.bikesAvailable} {bikes.bikeRentalStation.name}</div>
+            
+            <div>
+                {bikes.bikeRentalStations.map((bike) => <div className="bikes">{bike.bikesAvailable}/{bike.spacesAvailable} {bike.name}</div>)}
+            </div>
         )
     }
 }
