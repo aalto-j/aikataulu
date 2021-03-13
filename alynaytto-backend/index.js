@@ -1,10 +1,14 @@
-const http = require('http')
+const express = require('express')
+const app = express()
 
-const app = http.createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.end('Hello World')
+const ev = require('dotenv').config()
+
+const port = process.env.PORT
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
 })
 
-const port = 3001
-app.listen(port)
-console.log(`Server running on port ${port}`)
+app.get('/timetable', (request, response) => {
+  response.send(weatherService.getWeather())
+})
